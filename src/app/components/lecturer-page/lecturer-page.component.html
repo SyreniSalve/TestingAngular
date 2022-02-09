@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<h2>{{academy}}</h2>
+
+
+<div class="static-div">
+  <span>{{city}} {{year}}</span>
+  <button (click)="increase()">Increase year's</button>
+  <button (click)="decrease()">Decrease year's</button>
+  <div class="static-div" *ngIf="year%2===0">Even</div>
+  <div class="static-div" *ngIf="year%2!==0">Odd</div>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let item of subject; index as i">{{item.name}} <button (click)="removeSubject(i)">x</button></li>
+  </ul>
+</div>
+

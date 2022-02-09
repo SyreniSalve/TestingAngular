@@ -1,0 +1,31 @@
+<!--<div>-->
+<!--  <form action="#">Enter new person</form>-->
+<!--  <div>-->
+<!--    <p>Person name</p>-->
+<!--    <input type="text" name="username" value="">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>Person surname</p>-->
+<!--    <input type="text" name="user_surname" value="">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <p>Person age</p>-->
+<!--    <input type="text" name="user_age" value="">-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <button type="submit">Submit</button>-->
+<!--    <button type="reset">Reset</button>-->
+<!--  </div>-->
+<!--</div>-->
+<form [formGroup]="personForm">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name">
+
+  <label for="surname">Surname: </label>
+  <input id="surname" type="text" formControlName="surname">
+
+  <label for="age">Age: </label>
+  <input id="age" type="text" formControlName="age">
+
+  <button (click)="savePerson()">Save</button>
+</form>

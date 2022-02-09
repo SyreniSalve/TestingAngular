@@ -1,0 +1,4 @@
+<app-title-page text="Amount of people: {{people && people.length}}" ></app-title-page>
+<!--<app-datatable-page [people]="people" (remove)="removeSubject($event)"></app-datatable-page>-->
+<app-datatable-page [people]="people" (removeEmitter)="removePerson($event)" (editEmitter)="setEditPerson($event)"></app-datatable-page>
+<app-person-form (personEmitter)="addPerson($event)" [person]="personToEdit"></app-person-form>

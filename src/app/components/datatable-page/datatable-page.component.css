@@ -1,0 +1,12 @@
+table {
+  min-width: 400px;
+  width: 100%;
+}
+
+table th:first-child {
+  width: 50px;
+}
+
+table th:last-child {
+  width: 50px;
+}

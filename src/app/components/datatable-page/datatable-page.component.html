@@ -1,0 +1,46 @@
+<!--<div>-->
+<!--  <div>-->
+<!--    <ul>-->
+<!--&lt;!&ndash;      <li *ngFor="let p of people">{{p.name}} {{p.surname}} {{p.age}} <button (click)="removeRow(p.id)">remove</button></li>&ndash;&gt;-->
+<!--      <li *ngFor="let p of people">{{p.name}} {{p.surname}} {{p.age}} <button (click)="removePerson(p.id)">remove</button></li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--</div>-->
+<table mat-table [dataSource]="people" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{ i + 1 }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="surname">
+    <th mat-header-cell *matHeaderCellDef> Surname </th>
+    <td mat-cell *matCellDef="let element"> {{element.surname}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="removePerson(element.id)" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button (click)="editPerson(element)" mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
